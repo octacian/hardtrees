@@ -1,0 +1,37 @@
+-- hardtrees config --
+
+-- require tools to break trees (default: true)
+require_tools = true
+
+-- rock tools (default: true)
+rock_tools = true
+
+-- generate rocks (default: true)
+gen_rocks = true
+
+-- distance between rocks (default: 5)
+-- gen_rocks must be true
+rock_distance = 5
+
+-- rock generation interval (default: 60)
+-- gen_rocks must be true
+rock_interval = 60
+
+-- rock abm chance (default: 13)
+-- gen_rocks must be true
+rock_chance = 13
+
+-- generate sticks (default: true)
+gen_sticks = true
+
+-- distance between stick and tree (default: 3)
+-- gen_sticks must be true
+stick_distance = 3
+
+-- stick generation interval (default: 1440.0)
+-- gen_sticks must be true
+stick_interval = 1440.0
+
+-- stick abm chance (default: 50)
+-- gen_sticks must be true
+stick_chance = 50
