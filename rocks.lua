@@ -26,7 +26,7 @@ minetest.register_node("hardtrees:rock", {
   inventory_image = "rock_lump.png",
   wield_image = "rock_lump.png",
   drop = "hardtrees:rock",
-  groups = {cracky = 3, stone = 1, rock = 1},
+  groups = {cracky = 3, stone = 1, oddly_breakable_by_hand = 1, rock = 1},
   sounds = default.node_sound_stone_defaults(),
 	paramtype = "light",
   drawtype = "nodebox",
