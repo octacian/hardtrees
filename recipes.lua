@@ -2,7 +2,7 @@
 
 -- pick
 minetest.register_craft({
-  output = "genesis:pick_rock",
+  output = "hardtrees:pick_rock",
   recipe = {
     {"group:rock", "group:rock", "group:rock"},
     {"", "group:stick", ""},
@@ -12,7 +12,7 @@ minetest.register_craft({
 
 -- shovel
 minetest.register_craft({
-  output = "genesis:shovel_rock",
+  output = "hardtrees:shovel_rock",
   recipe = {
     {"", "group:rock", ""},
     {"", "group:stick", ""},
@@ -22,7 +22,7 @@ minetest.register_craft({
 
 -- axe
 minetest.register_craft({
-  output = "genesis:axe_rock",
+  output = "hardtrees:axe_rock",
   recipe = {
     {"group:rock", "group:rock", ""},
     {"group:rock", "group:stick", ""},
@@ -32,7 +32,7 @@ minetest.register_craft({
 
 -- knife
 minetest.register_craft({
-  output = "genesis:knife_rock",
+  output = "hardtrees:knife_rock",
   recipe = {
     {"", "group:rock", ""},
     {"", "group:rock", ""},

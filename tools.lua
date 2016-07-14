@@ -11,7 +11,7 @@ hardtrees:hoe_rock      (if farming is present)
 minetest.register_tool("hardtrees:pick_rock", {
   description = "Rock Pick",
   inventory_image = "tool_rock_pick.png",
-  ool_capabilities = {
+  tool_capabilities = {
 		full_punch_interval = 1.2,
 		max_drop_level=0,
 		groupcaps={
@@ -36,7 +36,7 @@ minetest.register_tool("hardtrees:shovel_rock", {
 })
 
 -- [axe] hardtrees:axe_rock
-minetest.register_tool("hardtrees:rock_axe", {
+minetest.register_tool("hardtrees:axe_rock", {
 	description = "Rock Axe",
 	inventory_image = "tool_rock_axe.png",
 	tool_capabilities = {
