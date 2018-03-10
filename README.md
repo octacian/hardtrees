@@ -1,13 +1,11 @@
 Hard Trees [hardtrees]
 ======================
-**Version 0.1**
-
-**License: MIT (see LICENSE.txt)**
+**License: MIT (see LICENSE)**
 
 hardtrees is a mod with a very simple concept. Trees are made harder, meaning you cannot punch them with your fists. Instead, you must find rocks on cobble, stone, mossy cobble, or sandstone, and make the appropriate rock tool, in this case, an axe. However, to make an axe you must have sticks, for which there are two methods to obtain. When leaves are broken then have a 1 out of 13 chance to drop not only the broken node, but also a stick. Once every day, sticks also drop from trees to the group. The mod uses overrides to make trees unbreakable by hand, and also modifies leaves so that they drop the needed items. Leaves are also modified to act as ladders, so you can climb through the tops of trees.
 
 ## Mod Support
-hardtrees supports all trees within the moretrees and default mod as of July 7th, 2016. To add support for more trees, use the code below modified to fit the new tree and save it in hardtrees/override.lua. 
+hardtrees supports all trees within the moretrees and default mod as of July 7th, 2016. To add support for more trees, use the code below modified to fit the new tree and save it in hardtrees/override.lua.
 
 ```lua
 -- override tree node
@@ -61,14 +59,11 @@ stick_interval = 1440.0
 -- gen_sticks must be true
 stick_chance = 50
 ```
-### Installation and Updates
-Unzip the archive, rename the folder to `hardtrees`, and place it in `minetest/mods` or in the mods folder of the subgame in which you wish to use ServerTools.
+
+### Installation
+Download a ZIP of the mod from Github and unzip it, or clone the repository from the command line. Then, the resulting directory in the `mods` directory of your local Minetest installation. On Linux this is usually `~/.minetest/mods`. You do not have to ensure that the installed mod directory is named `hardtrees` unless it is your personal preference to do so.
 
 You can also install this mod in the `worldmods` folder inside any world directory to use it only within one world.
 
 For further information or help see:
 http://wiki.minetest.com/wiki/Installing_Mods
-
-To update, periodically check the [Gogs repository](http://208.69.243.45:3000/octacian/hardtrees) and download either the latest release or the master branch (most up to date, but often unstable).
-
-The mod will soon include an auto update function, which will work on its own so long as you have internet.
