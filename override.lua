@@ -1,6 +1,7 @@
 -- hardtrees/override.lua
 hardtrees.override = {} -- override global variable
 
+local moretrees = false
 -- if moretrees, then moretrees true
 if minetest.get_modpath("moretrees") then moretrees = true end
 
