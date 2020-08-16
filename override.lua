@@ -137,6 +137,11 @@ if minetest.get_modpath("moretrees") then
   hardtrees.override.leaf("moretrees:fir_leaves", "moretrees:fir_sapling")
   hardtrees.override.leaf("moretrees:fir_leaves_bright", "moretrees:fir_sapling")
 
+  -- moretrees:jungletree
+  hardtrees.override.tree("moretrees:jungletree_trunk")
+  hardtrees.override.leaf("moretrees:jungletree_leaves_red", "default:junglesapling")
+  hardtrees.override.leaf("moretrees:jungletree_leaves_yellow", "default:junglesapling")
+
   -- moretrees:palm
   hardtrees.override.moretrees("palm")
 
