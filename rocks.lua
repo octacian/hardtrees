@@ -1,5 +1,3 @@
--- hardtrees/rocks.lua
-hardtrees.conf() -- read conf
 --[[ ROCK
 hardtrees:rock
 
@@ -38,17 +36,19 @@ minetest.register_node("hardtrees:rock", {
 	}
 })
 
--- [abm] rock placment
-minetest.register_abm({
-  nodenames = { "default:cobble", "default:stone", "default:mossycobble", "default:clay", "default:sandstone" },
-  neighbors = { "air" },
-  interval = rock_interval,
-  chance = rock_chance,
-  action = function(pos, node)
-    if minetest.get_node({ x = pos.x, y = pos.y + 1, z = pos.z}).name == "air" then -- if node is air, place
-      if not minetest.find_node_near({x = pos.x, y = pos.y +1, z = pos.z}, rock_distance, "hardtrees:rock") then
-        minetest.set_node({x = pos.x, y = pos.y + 1, z = pos.z}, {name = "hardtrees:rock"})
-      end
-    end
-  end,
-})
+if hardtrees.gen_rocks then
+	-- [abm] rock placment
+	minetest.register_abm({
+	  nodenames = { "default:cobble", "default:stone", "default:mossycobble", "default:clay", "default:sandstone" },
+	  neighbors = { "air" },
+	  interval = hardtrees.rock_interval,
+	  chance = hardtrees.rock_gen_chance,
+	  action = function(pos, node)
+	    if minetest.get_node({ x = pos.x, y = pos.y + 1, z = pos.z}).name == "air" then -- if node is air, place
+	      if not minetest.find_node_near({x = pos.x, y = pos.y +1, z = pos.z}, hardtrees.rock_distance, "group:rock") then
+		minetest.set_node({x = pos.x, y = pos.y + 1, z = pos.z}, {name = "hardtrees:rock"})
+	      end
+	    end
+	  end,
+	})
+end
