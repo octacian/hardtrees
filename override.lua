@@ -87,6 +87,12 @@ if minetest.get_modpath("moretrees") then
   -- moretrees:birch
   hardtrees.override.moretrees("birch")
 
+  -- moretrees:cedar
+  hardtrees.override.moretrees("cedar")
+
+  -- moretrees:date_palm
+  hardtrees.override.moretrees("date_palm")
+
   -- moretrees:fir
   hardtrees.override.tree("moretrees:fir_trunk")
   hardtrees.override.leaf("moretrees:fir_leaves", "moretrees:fir_sapling")
@@ -99,6 +105,9 @@ if minetest.get_modpath("moretrees") then
 
   -- moretrees:palm
   hardtrees.override.moretrees("palm")
+
+  -- moretrees:poplar
+  hardtrees.override.moretrees("poplar")
 
   -- moretrees:rubber
   hardtrees.override.moretrees("rubber_tree")
