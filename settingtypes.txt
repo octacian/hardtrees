@@ -1,0 +1,13 @@
+hardtrees_require_tools (Require tools to cut down trees) bool true
+hardtrees_rock_tools (Add rock tools that can be crafted without cutting down trees) bool true
+hardtrees_add_rocks (Add rocks that can be used to make rock tools) bool true
+hardtrees_gen_rocks (Generate rocks on top of stone over time with an ABM) bool true
+hardtrees_rock_distance (Minimum allowable distance between generated rocks) int 5
+hardtrees_rock_interval (Amount of time, in seconds, it takes between rock generations) int 60
+hardtrees_rock_gen_chance (The chance that any stone node will have a rock placed on top of it, equal to 1/chance) int 13
+hardtrees_rock_dig_chance (The chance that any dirt node will drop a rock upon being dug, equal to 1/chance, or use 0 to disable) int 10
+hardtrees_gen_sticks (Allow leaf nodes to randomly drop sticks onto the ground) bool true
+hardtrees_stick_distance (Maximum distance between leaves and tree nodes to allow sticks to generate) int 3
+hardtrees_stick_interval (Amount of time, in seconds, it takes between stick generations) int 1440
+hardtrees_stick_gen_chance (The chance that any leaf node will randomly drop a stick as a result of the generation ABM, equal to 1/chance) int 50
+hardtrees_stick_dig_chance (The chance that any leaf node will drop a stick upon being dug, equal to 1/chance, or use 0 to disable) int 5

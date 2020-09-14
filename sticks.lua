@@ -1,5 +1,3 @@
--- hardtrees/sticks.lua
-hardtrees.conf() -- read conf
 --[[ STICKS
 Sticks are generated vai ABM every 14440 seconds if the chunk is active. They
 are found on nodes within the group crumbly. This includes, dirt sand, and
@@ -25,11 +23,11 @@ end
 minetest.register_abm({
   nodenames = { "group:crumbly" },
   neighbors = { "group:tree", "group:leaves", "air" },
-  interval = stick_interval,
-  chance = stick_chance,
+  interval = hardtrees.stick_interval,
+  chance = hardtrees.stick_gen_chance,
   action = function(pos, node)
     if minetest.get_node({ x = pos.x, y = pos.y + 1, z = pos.z}).name == "air" then -- if node is air, place
-      if minetest.find_node_near({x = pos.x, y = pos.y + 1, z = pos.z}, stick_distance, "group:tree") then
+      if minetest.find_node_near({x = pos.x, y = pos.y + 1, z = pos.z}, hardtrees.stick_distance, "group:tree") then
       	if math.random(1,3) < 3 then -- math random to make more rare
           local number = math.random(1,2) -- place 1 or 2
           hardtrees.drop_item({x = pos.x, y = pos.y + 1, z = pos.z}, {name = "default:stick"}, number) -- drop stick

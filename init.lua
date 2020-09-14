@@ -1,35 +1,34 @@
 -- hardtrees/init.lua
-hardtrees = {} -- global variables
+
+hardtrees = { -- global variables
+	require_tools = minetest.settings:get_bool("hardtrees_require_tools", true),
+	rock_tools = minetest.settings:get_bool("hardtrees_rock_tools", true),
+	add_rocks = minetest.settings:get_bool("hardtrees_add_rocks", true),
+	gen_rocks = minetest.settings:get_bool("hardtrees_gen_rocks", true),
+	rock_distance = tonumber(minetest.settings:get("hardtrees_rock_distance")) or 5,
+	rock_interval = tonumber(minetest.settings:get("hardtrees_rock_interval")) or 60,
+	rock_gen_chance = tonumber(minetest.settings:get("hardtrees_rock_gen_chance")) or 13,
+	rock_dig_chance = tonumber(minetest.settings:get("hardtrees_rock_dig_chance")) or 10,
+	gen_sticks = minetest.settings:get_bool("hardtrees_gen_sticks", true),
+	stick_distance = tonumber(minetest.settings:get("hardtrees_stick_distance")) or 3,
+	stick_interval = tonumber(minetest.settings:get("hardtrees_stick_interval")) or 1440,
+	stick_gen_chance = tonumber(minetest.settings:get("hardtrees_stick_gen_chance")) or 50,
+	stick_dig_chance = tonumber(minetest.settings:get("hardtrees_stick_dig_chance")) or 5,
+}
+
 hardtrees.modpath = minetest.get_modpath("hardtrees") -- modpath
 hardtrees.worldpath = minetest.get_worldpath() -- worldpath
-modpath = hardtrees.modpath -- modpath
+local modpath = hardtrees.modpath -- modpath shortcut
 
--- [function] read config
-function hardtrees.conf()
-  local f = io.open(hardtrees.worldpath.."/hardtrees_conf.txt", "r") -- open file
-  if f == nil then dofile(hardtrees.modpath.."/conf.txt") end -- read config
-  -- check for nil or unset values
-  if not require_tools then local require_tools = true end -- require tools
-  if not rock_tools then local rock_tools = true end -- rock tools
-  if not gen_rocks then local gen_rocks = true end -- generate rocks
-  if not rock_distance then local rock_distance = 5 end -- rock generation distance
-  if not rock_interval then local rock_interval = 60 end -- rock generation interval
-  if not rock_chance then local rock_chane = 13 end -- rock generation chance
-  if not gen_sticks then local gen_sticks = true end -- generate sticks
-  if not stick_distance then local stick_distance = 3 end -- stick generation distance
-  if not stick_interval then local stick_interval = 1440 end -- stick generation interval
-  if not stick_chance then local stick_chance = 50 end -- stick generation chance
-end
 
-hardtrees.conf()
 
 -- load generation lua
-if gen_rocks == true then dofile(modpath.."/rocks.lua") end -- rocks
-if gen_sticks == true then dofile(modpath.."/sticks.lua") end -- sticks
+if hardtrees.add_rocks then dofile(modpath.."/rocks.lua") end -- rocks
+if hardtrees.gen_sticks then dofile(modpath.."/sticks.lua") end -- sticks
 
 -- load optional lua
-if require_tools == true then dofile(modpath.."/override.lua") end -- tree & leave overrides
-if rock_tools == true then
+if hardtrees.require_tools then dofile(modpath.."/override.lua") end -- tree & leave overrides
+if hardtrees.rock_tools then
   dofile(modpath.."/tools.lua") -- tools
   dofile(modpath.."/recipes.lua") -- recipes
 end
